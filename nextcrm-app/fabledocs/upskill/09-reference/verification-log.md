@@ -46,3 +46,11 @@ Running record of what was inspected while writing this curriculum. Date: **2026
 - Email IMAP sync (inngest/functions/emails/), documents processing, reports scheduling, e2b sandbox enrichment, and the projects/boards UI were surveyed by directory listing only.
 - Line anchors are exact as of 2026-07-11; the repo has no git history here, so future drift cannot be diffed against a commit.
 - prisma/schema.prisma read via model-name grep + targeted sections, not all 1909 lines.
+
+## Refinement pass (2026-10-07)
+
+Static only; nothing installed or run.
+
+- Every relative link and `#L` anchor in `fabledocs/`, `docs2/` and `docs3/` was resolved by script against this snapshot. Dead targets: `.env.example` (omitted by the private-import secret filter — see `SECURITY_FILTERED_FILES.md` at the repo root), so the fast-track and runtime map now point at the `process.env.*` reads instead. One out-of-range citation fixed in `docs2/mission-learning-path/03-tier-3-senior-missions.md` (`lib/audit-log.ts` has 83 lines, not 90).
+- Re-read and confirmed: risk #1/#13 (`update-account.ts` L41–L49), #2 (`.github/workflows/` contains only `release-please.yml`), #4 (`merge-tags.ts` L17–L23 returns raw values), #8 (`===` compare at `resend/route.ts` L10), `v: 0` at `update-account.ts` L45 (`@map("__v")` in the schema).
+- Risk #5 sharpened into a mass-assignment finding: `...rest` is spread after `updatedBy`, so `deletedAt`, `createdBy`, `assigned_to` and even `updatedBy` are caller-writable on `crm_Accounts` (columns confirmed in `prisma/schema.prisma`). Not executed.

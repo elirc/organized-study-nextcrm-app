@@ -4,7 +4,7 @@ Goal: by Sunday night you can run NextCRM locally, trace two end-to-end flows al
 
 ## 1. Install and run (Saturday morning)
 
-All commands are **inferred** from [package.json](../../package.json#L9-L21), [docker-compose.yml](../../docker-compose.yml), and [.env.example](../../.env.example) — they were not executed while writing these docs. Node ≥ 22.12 and pnpm ≥ 9 are required ([package.json](../../package.json#L5-L8)).
+All commands are **inferred** from [package.json](../../package.json#L9-L21), [docker-compose.yml](../../docker-compose.yml), and the upstream `.env.example` (omitted from this snapshot by the import filter; the env names below were checked against `process.env.*` reads) — they were not executed while writing these docs. Node ≥ 22.12 and pnpm ≥ 9 are required ([package.json](../../package.json#L5-L8)).
 
 ```bash
 # Infra: Postgres (pgvector image) + MinIO

@@ -186,7 +186,7 @@ How to self-grade: Strong answers cite `jest.config.ts:3-15` and `app/api/report
 **Goal:** Infer system evolution from realistic commit messages and current code.
 **The Concept:** Git history is the CRM archive. It tells you why a workflow was changed, not only what it is today.
 **Design Intent Before You Read the Code:** Commit messages should be interpreted against current architecture and likely migration pressure.
-**Find It In The Code:** Open `prisma/migrations/20260328000002_add_crm_audit_log/migration.sql` if present, `lib/audit-log.ts:1-90`, `actions/crm/contacts/create-contact.ts:85-94`, `lib/serialize-decimals.ts:1-25`, and `actions/crm/get-crm-data.ts:45-65`.
+**Find It In The Code:** Open `prisma/migrations/20260328000002_add_crm_audit_log/migration.sql` if present, `lib/audit-log.ts:1-83`, `actions/crm/contacts/create-contact.ts:85-94`, `lib/serialize-decimals.ts:1-25`, and `actions/crm/get-crm-data.ts:45-65`.
 
 ```ts
 // actions/crm/contacts/create-contact.ts:85-94

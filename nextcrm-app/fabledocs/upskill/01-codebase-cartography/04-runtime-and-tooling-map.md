@@ -31,7 +31,7 @@ Prisma 7 with the **pg driver adapter** (not the default engine binary) — [lib
 
 ## Env vars (high level, no secrets)
 
-Groups you'll actually need locally: `DATABASE_URL`; `BETTER_AUTH_SECRET`/`BETTER_AUTH_URL` + `GOOGLE_ID`/`GOOGLE_SECRET`; `EMAIL_ENCRYPTION_KEY` (64 hex chars — enforced at [email-crypto.ts](../../../lib/email-crypto.ts#L7-L15)); `RESEND_API_KEY` + `RESEND_WEBHOOK_SECRET`; MinIO creds; `INNGEST_*`; optional `OPENAI_API_KEY`/`FIRECRAWL_API_KEY` (or store per-user encrypted keys — [api-keys.ts](../../../lib/api-keys.ts#L21-L46)); optional `UPSTASH_REDIS_REST_URL/TOKEN`. See [.env.example](../../../.env.example).
+Groups you'll actually need locally: `DATABASE_URL`; `BETTER_AUTH_SECRET`/`BETTER_AUTH_URL` + `GOOGLE_ID`/`GOOGLE_SECRET`; `EMAIL_ENCRYPTION_KEY` (64 hex chars — enforced at [email-crypto.ts](../../../lib/email-crypto.ts#L7-L15)); `RESEND_API_KEY` + `RESEND_WEBHOOK_SECRET`; MinIO creds; `INNGEST_*`; optional `OPENAI_API_KEY`/`FIRECRAWL_API_KEY` (or store per-user encrypted keys — [api-keys.ts](../../../lib/api-keys.ts#L21-L46)); optional `UPSTASH_REDIS_REST_URL/TOKEN`. Upstream documents these in `.env.example`, which the import filter omitted from this snapshot; `grep -rn "process.env" lib actions app inngest` is the ground truth here.
 
 ## Testing toolchain
 
